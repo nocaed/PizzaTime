@@ -39,6 +39,7 @@ public abstract class Pizza {
     // Returns the price of the pizza
     public abstract int pizzaPrice();
 
+    @Override
     /**
      * Converts this Pizza to a formatted string showing the size, style, and all toppings.
      * @return A String describing the size, style, and toppings of the pizza.
