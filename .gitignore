@@ -1,0 +1,5 @@
+PizzaTime.iml
+.idea/*
+*.class
+out/production/PizzaTime/sample/mainscreen.fxml
+out/production/PizzaTime/sample/detailsscreen.fxml
