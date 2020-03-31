@@ -15,6 +15,7 @@ public abstract class Pizza {
 
     /**
      * Pizza Constructor that allows for custom toppings.
+     * @author Thomas Brewer
      * @param style The type of pizza (Deluxe, Hawaiian, or BuildYourOwn)
      * @param size The size of the pizza
      * @param toppings The toppings on the pizza
@@ -27,6 +28,7 @@ public abstract class Pizza {
 
     /**
      * Pizza Constructor with no toppings, used for subclasses with preset toppings.
+     * @author Thomas Brewer
      * @param style The type of pizza (Deluxe, Hawaiian, or BuildYourOwn
      * @param size The size of the pizza
      */
@@ -42,6 +44,7 @@ public abstract class Pizza {
     @Override
     /**
      * Converts this Pizza to a formatted string showing the size, style, and all toppings.
+     * @author Thomas Brewer
      * @return A String describing the size, style, and toppings of the pizza.
      */
     public String toString() {
@@ -75,6 +78,7 @@ public abstract class Pizza {
 
     /**
      * Helper method for formatting the end of the toppings list.
+     * @author Thomas Brewer
      * @param str The string to be formatted
      * @param oldStr The substring to be replaced
      * @param newStr The substring replacing the old substring

@@ -15,6 +15,7 @@ public class Deluxe extends Pizza {
 
     /**
      * Constructor for Deluxe that hard sets style to "Deluxe" as well as the toppings.
+     * @author Thomas Brewer
      * @param size The size of the pizza
      */
     public Deluxe(String size) {
@@ -29,6 +30,7 @@ public class Deluxe extends Pizza {
     @Override
     /**
      * Calculates the price of the pizza.
+     * @author Thomas Brewer
      * @return Price of the pizza
      */
     public int pizzaPrice() {
