@@ -57,7 +57,7 @@ public abstract class Pizza {
 
         // appends all toppings to strToppings
         for(String topping : toppings) {
-            strToppings += topping + ", ";
+            strToppings += topping.toLowerCase() + ", ";
             numToppings++;
         }
 
