@@ -7,6 +7,7 @@
    <children>
       <Label layoutX="271.0" layoutY="14.0" text="Your Order" />
       <TextArea fx:id="orderTA" layoutX="8.0" layoutY="31.0" prefHeight="331.0" prefWidth="583.0" />
-      <Button fx:id="closeBtn" layoutX="8.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#closeWindow" prefHeight="37.0" prefWidth="583.0" text="Close" />
+      <Button fx:id="closeBtn" layoutX="8.0" layoutY="374.0" mnemonicParsing="false" onMouseClicked="#closeWindow" prefHeight="37.0" prefWidth="283.0" text="Close" />
+      <Button fx:id="clearBtn" layoutX="300.0" layoutY="374.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="283.0" text="Clear" />
    </children>
 </Pane>

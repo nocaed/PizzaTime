@@ -26,7 +26,8 @@ public class DetailController {
     private TextArea orderTA;
 
     @FXML
-    private Button closeBtn;
+    private Button closeBtn,
+                   clearBtn;
 
     /**
      * Initializes the order view to show all pizzas in the order.
