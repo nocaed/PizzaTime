@@ -35,9 +35,9 @@ public class DetailController {
      * @param pizzas Container that holds all pizzas in the order
      */
     void init(ArrayList<Pizza> pizzas) {
-        String output = ";";
+        String output = "";
         for(Pizza pizza : pizzas) {
-            output += pizza.toString() + "\n";
+            output += pizza.toString() + " Cost: $" + pizza.pizzaPrice() + "\n";
         }
         orderTA.setText(output);
     }
