@@ -8,7 +8,6 @@ package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -16,10 +15,12 @@ public class Proj4 extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("mainscreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("mainscreen.fxml"));
+        primaryStage.setScene(new Scene(loader.load()));
         primaryStage.setTitle("My Pizza Store");
-        primaryStage.setScene(new Scene(root, 625, 675));
         primaryStage.setResizable(false);
+        MainController controller = loader.<MainController>getController();
+        controller.init();
         primaryStage.show();
     }
 
