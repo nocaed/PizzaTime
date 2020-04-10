@@ -57,6 +57,9 @@ public class MainController {
 
     private ArrayList<Pizza> order;
 
+    private final int MAX_TOPPINGS = 6,
+                      MIN_TOPPINGS = 1;
+
     public MainController() {
         // instantiate container for toppings on a Pizza and the container for Pizzas
         toppings = new ArrayList<>();
@@ -102,9 +105,13 @@ public class MainController {
     private void addTopping() {
         if(!toppingsList.isDisabled()) {
             ObservableList<String> toppingsToAdd = selectedList.getItems();
+            int numElements = toppingsToAdd.size();
+
             for (String topping : toppingsList.getSelectionModel().getSelectedItems()) {
-                if(!toppingsToAdd.contains(topping))
+                if(!toppingsToAdd.contains(topping) && numElements+1 <= MAX_TOPPINGS) {
                     toppingsToAdd.add(topping);
+                    numElements++;
+                }
             }
 
         }
