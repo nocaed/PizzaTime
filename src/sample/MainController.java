@@ -118,6 +118,19 @@ public class MainController {
     }
 
     @FXML
+    private void removeTopping() {
+        ObservableList<String> toppingsToRemove = selectedList.getItems();
+        int numElements = toppingsToRemove.size();
+
+        for (String topping : selectedList.getSelectionModel().getSelectedItems()) {
+            if(numElements-1 >= MIN_TOPPINGS) {
+                toppingsToRemove.remove(topping);
+                numElements--;
+            }
+        }
+    }
+
+    @FXML
     /**
      * Loads the order details window.
      * @author Thomas Brewer
