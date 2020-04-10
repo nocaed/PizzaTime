@@ -91,10 +91,23 @@ public class MainController {
                 "Pineapple",
                 "Sausage");
         toppingsList.setItems(toppingChoices);
+        selectedList.setItems(FXCollections.observableArrayList());
     }
 
     private void setPizzaImage(String image) {
         pizzaImage.setImage(new Image("file:" + image + ".png"));
+    }
+
+    @FXML
+    private void addTopping() {
+        if(!toppingsList.isDisabled()) {
+            ObservableList<String> toppingsToAdd = selectedList.getItems();
+            for (String topping : toppingsList.getSelectionModel().getSelectedItems()) {
+                if(!toppingsToAdd.contains(topping))
+                    toppingsToAdd.add(topping);
+            }
+
+        }
     }
 
     @FXML
