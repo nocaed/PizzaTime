@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
 import java.util.ResourceBundle;
 
 public class MainController {
@@ -53,8 +54,6 @@ public class MainController {
     @FXML
     private TextArea outputTA;
 
-    private ArrayList<String> toppings;
-
     private ArrayList<Pizza> order;
 
     private final int MAX_TOPPINGS = 6,
@@ -62,7 +61,6 @@ public class MainController {
 
     public MainController() {
         // instantiate container for toppings on a Pizza and the container for Pizzas
-        toppings = new ArrayList<>();
         order = new ArrayList<>();
     }
 
@@ -128,6 +126,12 @@ public class MainController {
                 numElements--;
             }
         }
+    }
+
+    @FXML
+    private void clearToppings() {
+        ObservableList<String> toppingsToClear = selectedList.getItems();
+        toppingsToClear.remove(0, toppingsToClear.size());
     }
 
     @FXML
