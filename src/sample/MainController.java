@@ -135,6 +135,26 @@ public class MainController {
     }
 
     @FXML
+    private void updateOrder() {
+        String pizzaStyle = styleCombo.getValue();
+        String size = sizeCombo.getValue();
+        if(pizzaStyle.equalsIgnoreCase("deluxe"))
+            order.add(new Deluxe(size));
+        else if(pizzaStyle.equalsIgnoreCase("hawaiian"))
+            order.add(new Hawaiian(size));
+        else {
+            try {
+                ObservableList<String> selectedToppings = selectedList.getItems();
+                ArrayList<String> toppings = new ArrayList<>(selectedToppings);
+                order.add(new BuildYourOwn(size, toppings));
+            }
+            catch(Exception e) {
+                outputTA.setText(e.toString());
+            }
+        }
+    }
+
+    @FXML
     /**
      * Loads the order details window.
      * @author Thomas Brewer

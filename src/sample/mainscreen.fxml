@@ -17,7 +17,7 @@
             <Button fx:id="addBtn" layoutX="188.0" layoutY="341.0" mnemonicParsing="false" onMouseClicked="#addTopping" prefHeight="25.0" prefWidth="131.0" text="Add Toppings &gt;&gt;" />
             <Button fx:id="removeBtn" layoutX="188.0" layoutY="381.0" mnemonicParsing="false" onMouseClicked="#removeTopping" text="&lt;&lt; Remove Toppings" />
             <Button fx:id="clearBtn" layoutX="188.0" layoutY="515.0" mnemonicParsing="false" onMouseClicked="#clearToppings" prefHeight="25.0" prefWidth="131.0" text="Clear Selection" />
-            <Button fx:id="addOrderBtn" layoutX="514.0" layoutY="431.0" mnemonicParsing="false" text="Add to Order" />
+            <Button fx:id="addOrderBtn" layoutX="514.0" layoutY="431.0" mnemonicParsing="false" onMouseClicked="#updateOrder" text="Add to Order" />
             <Button fx:id="showBtn" layoutX="514.0" layoutY="472.0" mnemonicParsing="false" onMouseClicked="#loadOrderScreen" prefHeight="25.0" prefWidth="86.0" text="Show Order" />
             <ListView fx:id="selectedList" layoutX="343.0" layoutY="242.0" prefHeight="327.0" prefWidth="150.0" />
             <Label layoutX="369.0" layoutY="225.0" text="Selected Toppings" />
