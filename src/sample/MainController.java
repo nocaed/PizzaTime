@@ -6,8 +6,6 @@
 
 package sample;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -95,10 +93,12 @@ public class MainController {
             if(newValue.equalsIgnoreCase("deluxe")) {
                 disableToppings(true);
                 setPizzaImage(deluxeImage);
+                clearToppings();
             }
             else if(newValue.equalsIgnoreCase("hawaiian")) {
                 disableToppings(true);
                 setPizzaImage(hawaiianImage);
+                clearToppings();
             }
             else {
                 disableToppings(false);
@@ -165,7 +165,7 @@ public class MainController {
                 order.add(new BuildYourOwn(size, toppings));
             }
             catch(Exception e) {
-                outputTA.setText(e.toString());
+                outputTA.setText(e.toString().substring(e.toString().indexOf(":")+2));
             }
         }
     }
