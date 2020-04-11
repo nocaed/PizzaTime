@@ -128,6 +128,10 @@ public class MainController {
                 }
             }
 
+            outputTA.setText("Topping added!");
+        }
+        else {
+            outputTA.setText("Error, cannot add topping at this time.");
         }
     }
 
@@ -142,27 +146,35 @@ public class MainController {
                 numElements--;
             }
         }
+
+        outputTA.setText("Topping removed!");
     }
 
     @FXML
     private void clearToppings() {
         ObservableList<String> toppingsToClear = selectedList.getItems();
         toppingsToClear.remove(0, toppingsToClear.size());
+        outputTA.setText("Toppings cleared!");
     }
 
     @FXML
     private void updateOrder() {
         String pizzaStyle = styleCombo.getValue();
         String size = sizeCombo.getValue();
-        if(pizzaStyle.equalsIgnoreCase("deluxe"))
+        if(pizzaStyle.equalsIgnoreCase("deluxe")) {
             order.add(new Deluxe(size));
-        else if(pizzaStyle.equalsIgnoreCase("hawaiian"))
+            outputTA.setText("Deluxe pizza added to order!");
+        }
+        else if(pizzaStyle.equalsIgnoreCase("hawaiian")) {
             order.add(new Hawaiian(size));
+            outputTA.setText("Hawaiian pizza added to order!");
+        }
         else {
             try {
                 ObservableList<String> selectedToppings = selectedList.getItems();
                 ArrayList<String> toppings = new ArrayList<>(selectedToppings);
                 order.add(new BuildYourOwn(size, toppings));
+                outputTA.setText("New pizza added to order!");
             }
             catch(Exception e) {
                 outputTA.setText(e.toString().substring(e.toString().indexOf(":")+2));
