@@ -21,10 +21,7 @@
             <Button fx:id="showBtn" layoutX="514.0" layoutY="472.0" mnemonicParsing="false" onMouseClicked="#loadOrderScreen" prefHeight="25.0" prefWidth="86.0" text="Show Order" />
             <ListView fx:id="selectedList" layoutX="343.0" layoutY="242.0" prefHeight="327.0" prefWidth="150.0" />
             <Label layoutX="369.0" layoutY="225.0" text="Selected Toppings" />
-            <ImageView fx:id="pizzaImage" fitHeight="178.0" fitWidth="243.0" layoutX="271.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@buildyourown.png" />
-               </image></ImageView>
+            <ImageView fx:id="pizzaImage" fitHeight="178.0" fitWidth="243.0" layoutX="271.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
          </children></Pane>
       <TextArea fx:id="outputTA" editable="false" maxHeight="-Infinity" prefHeight="75.0" prefWidth="598.0" />
    </items>

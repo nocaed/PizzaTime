@@ -45,12 +45,22 @@ public class MainController {
     private final int MAX_TOPPINGS = 6,
                       MIN_TOPPINGS = 1;
 
+    private Image deluxeImage,
+                  hawaiianImage,
+                  byoImage;
+
     public MainController() {
         // instantiate container for toppings on a Pizza and the container for Pizzas
         order = new ArrayList<>();
+        // create images to load into pizzaImage later on
+        deluxeImage = new Image("file:deluxe.png");
+        hawaiianImage = new Image("file:hawaiian.png");
+        byoImage = new Image("file:buildyourown.png");
     }
 
     void init() {
+        // initialize image of pizza
+        setPizzaImage(byoImage);
         // initialize types of pizza
         ObservableList<String> pizzaTypes = FXCollections.observableArrayList(
                 "Build Your Own",
@@ -84,15 +94,15 @@ public class MainController {
         styleCombo.valueProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue.equalsIgnoreCase("deluxe")) {
                 disableToppings(true);
-                setPizzaImage("deluxe");
+                setPizzaImage(deluxeImage);
             }
             else if(newValue.equalsIgnoreCase("hawaiian")) {
                 disableToppings(true);
-                setPizzaImage("hawaiian");
+                setPizzaImage(hawaiianImage);
             }
             else {
                 disableToppings(false);
-                setPizzaImage("buildyourown");
+                setPizzaImage(byoImage);
             }
         });
     }
@@ -101,8 +111,8 @@ public class MainController {
         toppingsList.setDisable(disable);
     }
 
-    private void setPizzaImage(String image) {
-        pizzaImage.setImage(new Image("file:" + image + ".png"));
+    private void setPizzaImage(Image image) {
+        pizzaImage.setImage(image);
     }
 
     @FXML
