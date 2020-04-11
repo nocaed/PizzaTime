@@ -26,22 +26,26 @@ public class DetailController {
     @FXML
     private Label priceLbl;
 
+    private ArrayList<Pizza> pizzas;
+
     /**
      * Initializes the order view to show all pizzas in the order.
      * @author Thomas Brewer
      * @param pizzas Container that holds all pizzas in the order
      */
     void init(ArrayList<Pizza> pizzas) {
+        this.pizzas = pizzas;
         String output = "";
         double total = 0.0;
         double currPrice;
+        DecimalFormat currencyFormatter = new DecimalFormat("$#,##0.00");
         for(Pizza pizza : pizzas) {
             currPrice = pizza.pizzaPrice();
-            output += pizza.toString() + " Cost: $" + currPrice + "\n";
+            output += pizza.toString() + " Cost: " + currencyFormatter.format(currPrice) + "\n";
             total += currPrice;
         }
         orderTA.setText(output);
-        priceLbl.setText(new DecimalFormat("$#,##0.00").format(total));
+        priceLbl.setText(currencyFormatter.format(total));
     }
 
     @FXML
@@ -51,5 +55,11 @@ public class DetailController {
      */
     private void closeWindow() {
         ((Stage)closeBtn.getScene().getWindow()).close();
+    }
+
+    @FXML
+    private void clearOrder() {
+        pizzas.removeAll(pizzas);
+        orderTA.setText("");
     }
 }
