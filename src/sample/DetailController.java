@@ -20,8 +20,7 @@ public class DetailController {
     private TextArea orderTA;
 
     @FXML
-    private Button closeBtn,
-                   clearBtn;
+    private Button closeBtn;
 
     @FXML
     private Label priceLbl;
@@ -61,5 +60,6 @@ public class DetailController {
     private void clearOrder() {
         pizzas.removeAll(pizzas);
         orderTA.setText("");
+        priceLbl.setText("$0.00");
     }
 }
