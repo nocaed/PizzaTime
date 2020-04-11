@@ -17,15 +17,15 @@ import java.text.DecimalFormat;
 
 public class DetailController {
     @FXML
-    private TextArea orderTA;
+    private TextArea orderTA; // holds the order display
 
     @FXML
-    private Button closeBtn;
+    private Button closeBtn; // closes the window
 
     @FXML
-    private Label priceLbl;
+    private Label priceLbl; // holds the total price of the order
 
-    private ArrayList<Pizza> pizzas;
+    private ArrayList<Pizza> pizzas; // holds the order
 
     /**
      * Initializes the order view to show all pizzas in the order.
@@ -33,17 +33,23 @@ public class DetailController {
      * @param pizzas Container that holds all pizzas in the order
      */
     void init(ArrayList<Pizza> pizzas) {
+        // store order for later clearing
         this.pizzas = pizzas;
+        // initialize output to blank values
         String output = "";
         double total = 0.0;
         double currPrice;
+        // this object formats all floating point values into a currency format
         DecimalFormat currencyFormatter = new DecimalFormat("$#,##0.00");
+        // for each pizza in the order, display the order and add the price to the total order
         for(Pizza pizza : pizzas) {
             currPrice = pizza.pizzaPrice();
             output += pizza.toString() + " Cost: " + currencyFormatter.format(currPrice) + "\n";
             total += currPrice;
         }
+        // display order
         orderTA.setText(output);
+        // display net total
         priceLbl.setText(currencyFormatter.format(total));
     }
 
@@ -57,6 +63,10 @@ public class DetailController {
     }
 
     @FXML
+    /**
+     * Clears the order collection and resets all displays in this stage.
+     * @author Thomas Brewer
+     */
     private void clearOrder() {
         pizzas.removeAll(pizzas);
         orderTA.setText("");
