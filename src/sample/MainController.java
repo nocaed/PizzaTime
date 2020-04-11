@@ -6,6 +6,8 @@
 
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,6 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import javax.swing.event.ChangeEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -75,8 +78,27 @@ public class MainController {
                 "Pineapple",
                 "Sausage");
         toppingsList.setItems(toppingChoices);
+        // Initialize a list for selected toppings
         selectedList.setItems(FXCollections.observableArrayList());
-        // TODO set an event listener for styleCombo changing value here
+        // set an event listener for the style combo box
+        styleCombo.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue.equalsIgnoreCase("deluxe")) {
+                disableToppings(true);
+                setPizzaImage("deluxe");
+            }
+            else if(newValue.equalsIgnoreCase("hawaiian")) {
+                disableToppings(true);
+                setPizzaImage("hawaiian");
+            }
+            else {
+                disableToppings(false);
+                setPizzaImage("buildyourown");
+            }
+        });
+    }
+
+    private void disableToppings(boolean disable) {
+        toppingsList.setDisable(disable);
     }
 
     private void setPizzaImage(String image) {
