@@ -63,15 +63,13 @@ public abstract class Pizza {
 
         // formats multiple toppings
         strToppings = replaceLast(strToppings, ", ", "");
-        if(numToppings > 2) {
+        if(numToppings > 2)
             strToppings = replaceLast(strToppings, ", ", ", and ");
-        }
-        else if(numToppings > 1) {
+        else if(numToppings > 1)
             strToppings = replaceLast(strToppings, ", ", " and ");
-        }
         // formats no toppings
-        else
-            strToppings = "no toppings.";
+        else if(numToppings <= 0)
+            strToppings = "no toppings";
 
         // append toppings to whole string and then return it
         str += strToppings + ".";
