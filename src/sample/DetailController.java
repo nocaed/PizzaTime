@@ -21,7 +21,6 @@ public class DetailController {
 
     @FXML
     private Button closeBtn,
-    
                    clearBtn;
 
     @FXML
