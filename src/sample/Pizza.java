@@ -62,11 +62,13 @@ public abstract class Pizza {
         }
 
         // formats multiple toppings
-        if(numToppings > 1)
+        strToppings = replaceLast(strToppings, ", ", "");
+        if(numToppings > 2) {
             strToppings = replaceLast(strToppings, ", ", ", and ");
-        // formats one topping
-        else if(numToppings == 1)
-            strToppings = replaceLast(strToppings, ", ", "");
+        }
+        else if(numToppings > 1) {
+            strToppings = replaceLast(strToppings, ", ", " and ");
+        }
         // formats no toppings
         else
             strToppings = "no toppings.";
