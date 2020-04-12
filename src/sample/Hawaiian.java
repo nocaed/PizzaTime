@@ -1,13 +1,15 @@
 /**
- *
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
 
-package sample;
-
 import java.util.ArrayList;
 
+/**
+ * For creating Hawaiian style pizzas for the client.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 public class Hawaiian extends Pizza {
     private final int SMALL = 8;
     private final int MEDIUM = SMALL + 2;

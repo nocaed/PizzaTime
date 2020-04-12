@@ -1,10 +1,7 @@
 /**
- *
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
-
-package sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,6 +12,11 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.text.DecimalFormat;
 
+/**
+ * For handling the controller operations for the details window pane.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 public class DetailController {
     @FXML
     private TextArea orderTA; // holds the order display
@@ -53,20 +55,20 @@ public class DetailController {
         priceLbl.setText(currencyFormatter.format(total));
     }
 
-    @FXML
     /**
      * Closes the window
      * @author Thomas Brewer
      */
+    @FXML
     private void closeWindow() {
         ((Stage)closeBtn.getScene().getWindow()).close();
     }
 
-    @FXML
     /**
      * Clears the order collection and resets all displays in this stage.
      * @author Thomas Brewer
      */
+    @FXML
     private void clearOrder() {
         pizzas.removeAll(pizzas);
         orderTA.setText("");

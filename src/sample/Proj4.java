@@ -1,16 +1,18 @@
 /**
- *
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
-
-package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Begins and runs the application.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 public class Proj4 extends Application {
 
     @Override

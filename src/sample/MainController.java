@@ -1,10 +1,7 @@
 /**
- *
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
-
-package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +19,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Controller operations for the main window pane where the client does the majority of their actions.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 public class MainController {
     @FXML
     private ComboBox<String> styleCombo, // holds choices for pizza styles
@@ -133,11 +135,11 @@ public class MainController {
         pizzaImage.setImage(image);
     }
 
-    @FXML
     /**
      * Event handler for add toppings button being pressed.
      * @author Thomas Brewer
      */
+    @FXML
     private void addTopping() {
         // if build your own is selected, add selected topping
         if(!toppingsList.isDisabled()) {
@@ -163,11 +165,11 @@ public class MainController {
         }
     }
 
-    @FXML
     /**
      * Event handler for the click of the remove button.
      * @author Thomas Brewer
      */
+    @FXML
     private void removeTopping() {
         // fetch current toppings
         ObservableList<String> toppingsToRemove = selectedList.getItems();
@@ -186,11 +188,11 @@ public class MainController {
         outputTA.setText("Topping removed!");
     }
 
-    @FXML
     /**
      * Event handler for clear button.
      * @author Thomas Brewer
      */
+    @FXML
     private void clearToppings() {
         // fetch list of current toppings
         ObservableList<String> toppingsToClear = selectedList.getItems();
@@ -200,11 +202,11 @@ public class MainController {
         outputTA.setText("Toppings cleared!");
     }
 
-    @FXML
     /**
      * Event handler for add to order button.
      * @author Thomas Brewer
      */
+    @FXML
     private void updateOrder() {
         // fetches pizza style/size from respective combo boxes
         String pizzaStyle = styleCombo.getValue();
@@ -239,11 +241,11 @@ public class MainController {
         }
     }
 
-    @FXML
     /**
      * Loads the order details window.
      * @author Thomas Brewer
      */
+    @FXML
     private void loadOrderScreen() {
         try {
             // load the gui in
@@ -267,6 +269,4 @@ public class MainController {
             outputTA.setText(e.toString());
         }
     }
-
-
 }

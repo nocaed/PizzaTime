@@ -1,13 +1,15 @@
 /**
- *
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
 
-package sample;
-
 import java.util.ArrayList;
 
+/**
+ * For creating deluxe-style pizzas for the client.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 public class Deluxe extends Pizza {
     private final int SMALL = 14;
     private final int MEDIUM = SMALL + 2;

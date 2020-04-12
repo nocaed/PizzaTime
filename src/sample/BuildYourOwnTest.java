@@ -1,4 +1,7 @@
-package sample;
+/**
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 
 import org.junit.Test;
 
@@ -8,8 +11,17 @@ import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * JUnit testing for the BuildYourOwn class.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 class BuildYourOwnTest {
 
+    /**
+     * Pizza Price.  This method tests the PizzaPrice() method from BuildYourOwn with a variety of different combinations.
+     * @throws Exception For testing outside of the proper bounds
+     */
     @org.junit.jupiter.api.Test
     public void pizzaPrice() throws Exception {
         //Necessary for testing

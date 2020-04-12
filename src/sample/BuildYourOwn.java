@@ -1,13 +1,15 @@
 /**
- *
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
 
-package sample;
-
 import java.util.ArrayList;
 
+/**
+ * For a client to build their own pizza.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 public class BuildYourOwn extends Pizza {
     private final int SMALL = 5;
     private final int MEDIUM = SMALL + 2;
@@ -21,6 +23,7 @@ public class BuildYourOwn extends Pizza {
      * @author Thomas Brewer
      * @param size The size of the pizza
      * @param toppings The toppings of the pizza
+     * @throws Exception In the event an out of bounds value is found
      */
     public BuildYourOwn(String size, ArrayList<String> toppings) throws Exception {
         super("Build Your Own", size, toppings);

@@ -1,13 +1,15 @@
 /**
- *
  * @author Thomas Brewer
  * @author Michael McLaughlin
  */
 
-package sample;
-
 import java.util.ArrayList;
 
+/**
+ * Superclass for various types of pizzas.
+ * @author Thomas Brewer
+ * @author Michael McLaughlin
+ */
 public abstract class Pizza {
     protected String style;
     protected String size;
@@ -38,7 +40,11 @@ public abstract class Pizza {
         toppings = new ArrayList<>();
     }
 
-    // Returns the price of the pizza
+    /**
+     * Calculates the price of the pizza.
+     * @author Thomas Brewer
+     * @return Price of the pizza
+     */
     public abstract int pizzaPrice();
 
     @Override
